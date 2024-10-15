@@ -1,0 +1,287 @@
+.ACLandingPage {
+    height: 100vh;
+    width: 100vw;
+    background: #000;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    overflow: hidden;
+}
+.ACLandingPage .logo,
+.ACLandingPage .form {
+    width: 45%;
+    height: 80%;
+}
+.ACLandingPage .form{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+}
+.ACLandingPage .logo img{
+    height: 100%;
+    width: 85%;
+}
+.ACLandingPage .otherLinks {
+    width: 90%;
+    height: 15%;
+}
+.ACLandingPage .form .heading{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.ACLandingPage .form .acOptions{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    /* background: yellow; */
+    gap: 15px;
+    
+}
+.ACLandingPage .form .acOptions .fdiv {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+   margin-top: 15px; 
+}
+.ACLandingPage .form .acOptions div button{
+    width: 100%;
+    height: 3em;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+    border-radius: 30px;
+    background: white;
+    font-weight: bold;
+}
+.ACLandingPage .form .acOptions div .ctAc {
+    width: 100%;
+    height: 3em;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+    border-radius: 30px;
+    background: rgb(0, 132, 255);
+    font-weight: bold;
+    color: white;
+}
+.ACLandingPage .form .acOptions div .ctAc:hover{
+    background: rgb(14, 86, 153);;
+}
+.ACLandingPage .form .acOptions div button:hover{
+    background: rgb(132, 128, 128);
+}
+.ACLandingPage .form .acOptions div p{
+    margin-top: 5px;
+    color: white;
+    font-weight: lighter;
+    font-size: 0.8em;
+}
+
+.ACLandingPage .form .acOptions div p span {
+    color: rgb(0, 132, 255);
+    cursor: pointer;
+}
+.ACLandingPage .form .heading h1{
+    font-size: 3em;
+    font-weight: bold;
+}
+.ACLandingPage .form .alreadyHaveAc{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: white;
+    margin-top: 50px;
+}
+.ACLandingPage .form .alreadyHaveAc p{
+    font-size: 1.2em;
+}
+.ACLandingPage .form .alreadyHaveAc button{
+    width: 100%;
+    height: 3em;
+    border: 0.1px solid rgb(160, 153, 153);
+    cursor: pointer;
+    transition: 0.5s;
+    border-radius: 30px;
+    background: black;
+    font-weight: bold;
+    color: rgb(0, 132, 255);
+}
+.ACLandingPage .form .alreadyHaveAc button:hover{
+    background: rgba(97, 125, 191, 0.368);
+}
+.ACLandingPage .otherLinks{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    color: gray;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.ACLandingPage .otherLinks td{
+    height: 15px;
+    /* background: red; */
+}
+.ACLandingPage .otherLinks td:hover{
+    border-bottom: 0.2px solid gray;
+}
+.ACLandingPage .newAc{
+    position: absolute;
+    height: 85%;
+    width: 40%;
+    border: 1px solid white;
+    background: #000;
+    border-radius: 10px;
+}
+.ACLandingPage .newAc .close{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    padding: 5px;
+    transition: 0.5s;
+}
+.ACLandingPage .newAc .close:hover{
+    background: gray;
+}
+.ACLandingPage .newAc form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.ACLandingPage .newAc form input{
+    width: 90%;
+    height: 8%;
+    padding-left: 10px;
+    font-weight: bold;
+    color: white;
+    background: #000;
+    border: 1px solid gray;
+    border-radius: 15px;
+}
+.ACLandingPage .newAc form .newAcBtn{
+    width: 90%;
+    height: 8%;
+    padding-left: 10px;
+    font-weight: bold;
+    color: white;
+    background: rgb(0, 132, 255);
+    border-radius: 15px;
+    transition: 0.5s;
+    border: none;
+}
+.ACLandingPage .newAc form .newAcBtn:hover{
+    background: rgb(9, 59, 106);
+    cursor: pointer;
+}
+.siginPage{
+    position: absolute;
+    height: 45%;
+    width: 40%;
+    border: 1px solid white;
+    background: #000;
+    border-radius: 10px;
+}
+.ACLandingPage .siginPage .close{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    padding: 5px;
+    transition: 0.5s;
+}
+.ACLandingPage .siginPage .close:hover{
+    background: gray;
+}
+.ACLandingPage .siginPage form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.ACLandingPage .siginPage form input{
+    width: 90%;
+    height: 12%;
+    padding-left: 10px;
+    font-weight: bold;
+    color: white;
+    background: #000;
+    border: 1px solid gray;
+    border-radius: 15px;
+}
+.ACLandingPage .siginPage form .siginPageBtn{
+    width: 90%;
+    height: 12%;
+    padding-left: 10px;
+    font-weight: bold;
+    color: white;
+    background: rgb(0, 132, 255);
+    border-radius: 15px;
+    transition: 0.5s;
+    border: none;
+}
+.ACLandingPage .siginPage form .siginPageBtn:hover{
+    background: rgb(9, 59, 106);
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 641px) {
+  .ACLandingPage {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-evenly;
+    padding: 10px;
+  }
+  .ACLandingPage .logo{
+    width: 90%;
+    height: 15%;
+  }
+  .ACLandingPage .form{
+    width: 90%;
+    height: 60%;
+  }
+  .ACLandingPage .otherLinks{
+    width: 90%;
+    height: 15%;
+  }
+}
