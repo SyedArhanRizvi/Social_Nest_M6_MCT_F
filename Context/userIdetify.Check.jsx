@@ -3,9 +3,9 @@ import { createContext, useState } from "react";
 export const UserContext = createContext();
 
 export const UserProvider = ({children})=>{
-    const [userVerified, setUserVerified] = useState(false);
+    const [user, setUser] = useState({});
 
     return (
-        <UserContext.Provider value={{userVerified, setUserVerified}}> {children} </UserContext.Provider>
+        <UserContext.Provider value={{user, setUser}}> {children} </UserContext.Provider>
     );
 };

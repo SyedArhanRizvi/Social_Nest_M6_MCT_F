@@ -65,6 +65,7 @@
     flex-direction: column;
     justify-content: space-between;
     padding-left: 10%;
+    background: #000;
 }
 .mainSection .sideNav .allFunc{
     padding-top: 10px;
@@ -110,10 +111,6 @@
     cursor: pointer;
     transition: 0.5s;
     font-size: 1.7em;
-}
-.mainSection .sideNav .allFunc .logo a{
-    text-decoration: none;
-    color: white;
 }
 .mainSection .sideNav .allFunc .pst{
     width: 90%;
@@ -229,157 +226,135 @@
 .mainSection .sideNav .acController  .acHanderPoPuP div p:hover{
     color: gray;
 }
-.mainSection .mainPosts{
-    width: 45%;
+.mainSection .profileContainer{
+    width: 46%;
     min-height: 100vh;
-    border: 0.1px solid rgba(126, 126, 126, 0.89);
-    margin-left: 461px;
-}
-.mainSection .mainPosts .relatedPosts {
-    width: 100%;
-    border-bottom: 1px solid gray;
-    display: flex;
-}
-.mainSection .mainPosts .relatedPosts p {
-    width: 50%;
-    height: 4em;
-    color: white;
-    cursor: pointer;
-    transition: 0.5s;
-    display: flex;
-    font-weight: bold;
-    /* font-size: 1.2em; */
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    justify-content: center;
-    align-items: center;
-}
-.mainSection .mainPosts .relatedPosts p:hover{
-    background: rgba(54, 54, 54, 0.444);
-}
-.mainSection .mainPosts .addPostForm{
-    width: 100%;
-    /* min-height: 14%; */
-    display: flex;
-    padding: 5px;
-    /* background: yellow; */
-}
-.mainSection .mainPosts .addPostForm .userImg{
-    width: 10%;
-    height: 4em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* height: 10/0%; */
-    /* background: gray; */
-}
-.mainSection .mainPosts .addPostForm .userImg img{
-    width: 60%;
-    height: 65%;
-    border-radius: 50%;
-    /* background: gray; */
-}
-.mainSection .mainPosts .addPostForm .userPostForm{
-    width: 87%;
-    min-height: 100%;
-    /* border: 1px solid cadetblue; */
-}
-.mainSection .mainPosts .addPostForm .userPostForm .inputField{
-    width: 100%;
-}
-hr{
-    border: 0.1px solid rgb(88, 88, 88);
-}
-.mainSection .mainPosts .addPostForm .userPostForm .inputField textarea{
-    width: 100%;
-    min-height: 6em;
-    text-align: start;
-    resize:vertical;
-    padding-top: 10px;
-    padding-left: 10px;
-    font-weight: bold;
-    font-size: 1.4em;
     background: #000;
     color: white;
-    border: none;
+    margin-left: 461px;
+    border: 0.1px solid rgba(92, 92, 92, 0.763);
 }
-.mainSection .mainPosts .addPostForm .userPostForm .addedImg{
+.mainSection .profileContainer .profileDashBoard{
     width: 100%;
-    height: 20em;
+    height: 35%;
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: column;
     position: relative;
-    /* background: gainsboro; */
 }
-.mainSection .mainPosts .addPostForm .userPostForm .addedImg img{
+.mainSection .profileContainer .profileDashBoard .topD{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.mainSection .profileContainer .profileDashBoard .topD .div{
     height: 100%;
-    width: 100%;
-}
-.mainSection .mainPosts .addPostForm .userPostForm .addedImg p {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    font-size: 1.1em;
-    color: white;
-    cursor: pointer;
-    padding: 4px 6px;
-    transition: 0.5s;
-    border-radius: 50%;
-}
-.mainSection .mainPosts .addPostForm .userPostForm .addedImg p:hover{
-    background: rgba(128, 128, 128, 0.648);
-}
-.mainSection .mainPosts .addPostForm .userPostForm .postBtn{
-    width: 100%;
-    height: 4em;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-}
-.mainSection .mainPosts .addPostForm .userPostForm .postBtn .d1{
-    width: 40%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    color: rgb(63, 162, 255);
-    font-size: 1.3em;
-    
-}
-.mainSection .mainPosts .addPostForm .userPostForm .postBtn .d1 p {
-    transition: 0.5s;
-    cursor: pointer;
-}
-.mainSection .mainPosts .addPostForm .userPostForm .postBtn .d2{
+    width: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-right: 15px;
 }
-.mainSection .mainPosts .addPostForm .userPostForm .postBtn .d2 p{
-    padding: 8px 20px;
-    background: rgb(63, 162, 255);
-    border-radius: 30px;
-    cursor: pointer;
+.mainSection .profileContainer .profileDashBoard .topD .div a{
+    text-decoration: none;
+    color: white;
+}
+.mainSection .profileContainer .profileDashBoard .topD .div a p{
+    font-size: 1.4em;
     transition: 0.5s;
-}
-.mainSection .mainPosts .addPostForm .userPostForm .postBtn .d2 p:hover{
-    background: rgb(17, 91, 160);
-}
-.mainSection .mainPosts .addPostForm .userPostForm .postBtn .d1 p:hover{
-    color: rgb(17, 91, 160);
     cursor: pointer;
 }
-.mainPosts .allPosts{
+.mainSection .profileContainer .profileDashBoard .topD .div a p:hover{
+    color: gray;
+}
+.mainSection .profileContainer .profileDashBoard .bgPhoto {
     width: 100%;
-    /* background: gainsboro; */
+    height: 85%;
+    background: gray;
+}
+.mainSection .profileContainer .profileDashBoard .userIng {
+    width: 25%;
+    height: 60%;
+    border: 1px solid white;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -80px;
+    left: 20px;
+}
+.mainSection .profileContainer .profileDashBoard2 {
+    width: 100%;
+    height: 35%;
+    /* background: gray; */
     display: flex;
     flex-direction: column;
+    /* border: 1px solid white; */
+    /* justify-content: end; */
 }
+.mainSection .profileContainer .profileDashBoard2 .editProfile{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:end;
+    padding-right: 15px;
+}
+.mainSection .profileContainer .profileDashBoard2 .editProfile p{
+    padding: 10px 30px;
+    border-radius: 30px;
+    border: 1px solid gray;
+    font-weight: bold;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.mainSection .profileContainer .profileDashBoard2 .editProfile p:hover{
+    background: rgba(47, 47, 47, 0.733);
+}
+.mainSection .profileContainer .profileDashBoard2 .userDetails{
+    width: 100%;
+    height: 70%;
+    /* background: green; */
+    display: flex;
+    flex-direction: column;
 
-
-
-
-
-
-
-
+    gap: 8px;
+    padding: 15px;
+}
+.mainSection .profileContainer .profileDashBoard2 .userDetails p{
+    color: rgb(184, 178, 178);
+}
+.mainSection .profileContainer .profileDashBoard2 .userDetails div {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.mainSection .profileContainer .mainProfileSection {
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+}
+.mainSection .profileContainer .mainProfileSection .list{
+    width: 100%;
+    /* padding: 5px; */
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 0.1px solid rgba(92, 92, 92, 0.763);
+}
+.mainSection .profileContainer .mainProfileSection .list p {
+    font-weight: bold;
+    width: 15%;
+    padding: 10px;
+    /* background: gray; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+.mainSection .profileContainer .mainProfileSection .list p:hover {
+    background: rgba(23, 23, 23, 0.762);
+    cursor: pointer;
+} 
 
 
 
@@ -397,6 +372,7 @@ hr{
     right: 0;
     display: flex;
     flex-direction: column;
+    background: #000;
     align-items: center;
     gap: 20px;
     /* background: rebeccapurple; */

@@ -1,0 +1,84 @@
+.card{
+    min-height: 20em;
+    width: 100%;
+    border: 2px solid green;
+    display: flex;
+    border: 0.1px solid gray;
+    color: white;
+}
+.card .userDP{
+    width: 10%;
+    height: 5em;
+    /* background: gray; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card .userDP img {
+    width: 60%;
+    height: 50%;
+    border-radius: 30px;
+}
+.card .postDetails {
+    width: 100%;
+    min-height: 100%;
+    padding: 10px;
+}
+.card .postDetails .header{
+    display: flex;
+    justify-content: space-between;
+}
+.card .postDetails .header div{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.card .postDetails .body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.card .postDetails .body .postImg {
+    width: 100%;
+    min-height: 15em;
+    /* max-height: 30em; */
+    /* object-fit: cover;   */
+}
+
+.card .postDetails .body .postImg img{
+    height: 100%;
+    width: 100%;
+}
+.card .postDetails .footer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.card .postDetails .footer{
+    font-size: 1.2em;
+}
+.card .postDetails .footer p{
+    color: gray;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.card .postDetails .footer p:hover{
+    color: rgb(255, 30, 30);
+}
+.card .postDetails .footer div{
+    display: flex;
+    gap: 10px;
+}
+.card .postDetails .footer div p{
+    font-size: 1em;
+    color: gray;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.card .postDetails .footer div p:hover{
+    color: rgb(255, 30, 30);
+}

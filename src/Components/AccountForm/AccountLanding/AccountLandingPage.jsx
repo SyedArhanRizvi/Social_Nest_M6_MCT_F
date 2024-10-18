@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react'
 import "./AccountLandingPage.css"
-import { UserContext } from '../../../../Context/userIdetify.Check';
 import axios from "axios";
 import logo from "../../../Photos/Gold Luxury Initial Logo.png";
 import { useNavigate } from 'react-router';
 import { IoMdClose } from "react-icons/io";
 import toast, { Toaster } from 'react-hot-toast';
+import { UserContext } from '../../../../Context/userIdetify.Check';
+
 
 function AccountLandingPage() {
   const navigator = useNavigate();
@@ -15,11 +16,12 @@ function AccountLandingPage() {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState();
   const [password, setPassword] = useState('');
+  const {setUser} = useContext(UserContext);
+  const [bgHandler, setBgHandler] = useState(false);
   
 
   const [newAc, setNewAc] = useState(false);
   const [oldAc, setOldAc] = useState(false);
-  const {userVerified, setUserVerified} = useContext(UserContext);
   
   // Create New User Account ::
   const createNewAccountHandler = async (e)=>{
@@ -51,7 +53,7 @@ function AccountLandingPage() {
           toast.success("Congratulations, Now You Have Logged In Successfully");
           setTimeout(() => {
             navigator("/homePage");
-          }, 2000);
+          }, 1000);
         }
       } catch (error) {
         console.log("There is some errors in your loggedIn Page handler ", error);
@@ -59,33 +61,36 @@ function AccountLandingPage() {
     }
   // ******************************
 
-
-  // User Authentication ::
   const checkIsUserHaveToken = async ()=>{
     try {
        const user = await axios.post("http://localhost:8000/api/profile/userAuthentication", {}, {withCredentials:true});
+       setUser(user.data.user);
        if(user.status === 201) {
-        setUserVerified(true);
+       
         navigator("/homePage");
        }
-       console.log(userVerified);
     } catch (error) {
       console.log("There is some issus to verify the user plz fix the bug first ", error);
       console.log(userVerified);
     }
   };
   useEffect(()=>{
-    checkIsUserHaveToken();
+    setTimeout( checkIsUserHaveToken(),1000)
   }, []);
   // ************************** //
   
   return (
     <section className='ACLandingPage'>
+      {
+        bgHandler && <div className='formateHandler'></div>
+      }
        <Toaster position="top-center" reverseOrder={false}/>
 
        {/* Drop Down for Logged In Account */}
         <div className="siginPage" style={{display:oldAc?'flex' : 'none'}}>
-        <div className="close"><IoMdClose onClick={()=>setOldAc(false)}/></div>
+        <div className="close"><IoMdClose onClick={()=>{
+          setOldAc(false);
+          setBgHandler(false)}}/></div>
           <form onSubmit={userLoggedInHandler}>
             <input type="email" name='email' placeholder='Enter Your Existing Email here..' onChange={(e)=>setEmail(e.target.value)}/>
             <input type="password" name='password' placeholder='Enter Your Existing Password here..' onChange={(e)=>setPassword(e.target.value)}/>
@@ -95,7 +100,10 @@ function AccountLandingPage() {
 
       {/* Drop Down For Create A New Account */}
       <div className='newAc' style={{display: newAc ? 'flex' : 'none'}}>
-          <div className="close"><IoMdClose onClick={()=>setNewAc(false)}/></div>
+          <div className="close"><IoMdClose onClick={()=>{
+            setNewAc(false);
+            setBgHandler(false)
+            }}/></div>
           <form onSubmit={createNewAccountHandler}>
           <input type="text" name='name' placeholder='Enter Your Name here..' onChange={(e)=>{setName(e.target.value)}}/>
           <input type="text" name='username' placeholder='Enter Your username here..' onChange={(e)=>{setUsername(e.target.value)}}/>
@@ -117,13 +125,19 @@ function AccountLandingPage() {
           <button>Continue With Google</button>
           <button>Continue With FaceBook</button></div><hr />
           <div>
-          <button className='ctAc' onClick={()=>setNewAc(true)}>Create Account</button>
+          <button className='ctAc' onClick={()=>{
+            setNewAc(true);
+            setBgHandler(true)
+            }}>Create Account</button>
           <p>By signing up, you agree to the <span>Terms of Service</span> and <span>Privacy Policy</span>, including <span>Cookie Use</span>.</p>
           </div>
           </div>
           <div className="alreadyHaveAc">
             <p><b>Already Have an Ac ?</b></p>
-            <button onClick={()=>setOldAc(true)}>Sign in</button>
+            <button onClick={()=>{
+              setOldAc(true);
+              setBgHandler(true)
+              }}>Sign in</button>
           </div>
         </div>
         <div className="otherLinks">

@@ -2,12 +2,19 @@
     height: 100vh;
     width: 100vw;
     background: #000;
+    /* background: rgba(255, 255, 255, 0.16); */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
     align-items: center;
     overflow: hidden;
+}
+.ACLandingPage .formateHandler{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(241, 239, 239, 0.219);
 }
 .ACLandingPage .logo,
 .ACLandingPage .form {
@@ -138,7 +145,7 @@
     position: absolute;
     height: 85%;
     width: 40%;
-    border: 1px solid white;
+    /* border: 1px solid white; */
     background: #000;
     border-radius: 10px;
 }
@@ -197,7 +204,7 @@
     position: absolute;
     height: 45%;
     width: 40%;
-    border: 1px solid white;
+    /* border: 1px solid white; */
     background: #000;
     border-radius: 10px;
 }
