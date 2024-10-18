@@ -32,8 +32,8 @@ function Home() {
     const [comments, setComments] = useState('');
     const [shares, setShares] = useState('');
     const [reposts, setReposts] = useState('');
-    const [likes, setLikes] = useState('');
-    const [likeCount, setLikeCount] = useState('');
+    const [likes, setLikes] = useState();
+    // const [likeCount, setLikeCount] = useState('');
     const [save, setSave] = useState('');
     const [location, setLocation] = useState('');
     const [demoFile, setDemoFile] = useState();
@@ -43,12 +43,34 @@ function Home() {
     const [loggedOutPopController, setLoggedOutPopUpController] = useState(false);
     const [bgHandler, setBgHandler] = useState(false);
     const [profile, setProfile] = useState(false);
-
-    const{user, setUser} = useContext(UserContext);
+    const {user, setUser, userId, setUSerId} = useContext(UserContext);
     const [isImgActive, setImgActive] = useState(false);
-    
-    
+    const [likeCount, setLikeCont] = useState(0);
+    const [saveUser, setSaveUSer] = useState();
+    //  comments: [CommentSchema],commentsCount // Array of comments 
 
+
+    const likesHandler = async (postId)=>{
+      console.log("Like", postId);
+      await setLikeCont((prev) => prev+1);
+      console.log(likeCount);
+        try {
+           const like = await axios.put(`http://localhost:8000/api/post/addLikeOrComment/${postId}`, {likeCount}, {withCredentials:true});
+           console.log("Like has successfully added", like);
+           getAllPosts();
+        } catch (error) {
+          console.log("There is some errors so we can not add your like on this post plz fix the bug first ", error);       
+        }
+    }
+
+    const deleteHandler = async (postId)=>{
+      try {
+        const postDelete = await axios.delete(`http://localhost:8000/api/post/deletePost${postId}`);
+        getAllPosts();
+      } catch (error) {
+        console.log("Sorry there is some errors so we can not delete your post plz fix the bug first ", error);
+      }
+    } 
     const fileHandler = async (e)=>{
      const selectedFile = e.target.files[0];
      setFile(selectedFile);
@@ -82,6 +104,7 @@ function Home() {
       
       try {
         const uploadedPost = await axios.post("http://localhost:8000/api/post/addNewPost", data, {withCredentials:true});
+        getAllPosts();
         console.log(uploadedPost);
         setDescription('');
         setDemoFile('');
@@ -116,20 +139,22 @@ function Home() {
       }
     }
 
-    // const userDetailsChecker = async ()=>{
-    //   try {
+    const userDetailsChecker = async (userId)=>{
+      try {
+          const userDetails = await axios.get(`http://localhost:8000/api/profile/getUserDetails${userId}`);
+          // console.log(userDetails.data.user);
+          setSaveUSer(userDetails.data.user);
+          console.log(saveUser);
+          
         
-    //       const userDetails = await axios.get("http://localhost:8000/api/profile/getUserDetails");
-    //       console.log(userDetails);
-    //       setUser(userDetails);
-        
-    //   } catch (error) {
-    //     console.log("There is some issus in your user checker function plz fix the bug first ", error);
-    //   }
-    // }
+      } catch (error) {
+        console.log("There is some issus in your user checker function plz fix the bug first ", error);
+      }
+    }
     useEffect(()=>{
       getAllPosts();
-      // userDetailsChecker();
+      console.log(userId);
+      userDetailsChecker(userId);
     }, []);
   return (
     <main className='mainSection'  style={{overflow: bgHandler ? 'hidden' : 'auto'}}>
@@ -151,7 +176,7 @@ function Home() {
               setLoggedOutPopUpController(false);
             }}>Cancel</p>
           </div>
-      </div>
+      </div>``
       }
          <section className="sideNav">
           <div className='allFunc'>
@@ -193,7 +218,7 @@ function Home() {
               <div className="userImg"><img src={sample} alt="" /></div>
               <div className="userPostForm">
                 <div className="inputField">
-                  <textarea type="text" name='' placeholder='What is happening ?!' onChange={(e)=>{
+                  <textarea type="text" value={description} name='' placeholder='What is happening ?!' onChange={(e)=>{
                     setDescription(e.target.value)
                 }}/></div><hr />
                 {
@@ -232,7 +257,7 @@ function Home() {
             : postData.map((post)=>{
               // console.log(post);
               
-              return <PostCard post={post}/>
+              return <PostCard post={post} deleteHandler={deleteHandler} likesHandler={likesHandler}/>
             })
            }
           </div>

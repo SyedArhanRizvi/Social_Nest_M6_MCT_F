@@ -236,7 +236,7 @@
 }
 .mainSection .profileContainer .profileDashBoard{
     width: 100%;
-    height: 35%;
+    height: 15em;
     /* border: 1px solid white; */
     display: flex;
     flex-direction: column;
@@ -284,7 +284,7 @@
 }
 .mainSection .profileContainer .profileDashBoard2 {
     width: 100%;
-    height: 35%;
+    height: 15em;
     /* background: gray; */
     display: flex;
     flex-direction: column;
@@ -355,7 +355,12 @@
     background: rgba(23, 23, 23, 0.762);
     cursor: pointer;
 } 
-
+.mainSection .profileContainer .mainProfileSection .allUserPosts {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
 
 

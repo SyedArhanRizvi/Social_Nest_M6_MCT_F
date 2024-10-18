@@ -5,7 +5,9 @@
     display: flex;
     border: 0.1px solid gray;
     color: white;
+    position: relative;
 }
+
 .card .userDP{
     width: 10%;
     height: 5em;
@@ -30,8 +32,15 @@
 }
 .card .postDetails .header div{
     display: flex;
-    flex-direction: row;
-    gap: 10px;
+    flex-direction: column;
+    gap: -4px;
+    cursor: pointer;
+}
+.card .postDetails .header div h4{
+    padding-left: 5px;
+}
+.card .postDetails .header div p{
+    color: gray;
 }
 .card .postDetails .body{
     width: 100%;

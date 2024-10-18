@@ -111,10 +111,6 @@
     transition: 0.5s;
     font-size: 1.7em;
 }
-.mainSection .sideNav .allFunc .logo a{
-    text-decoration: none;
-    color: white;
-}
 .mainSection .sideNav .allFunc .pst{
     width: 90%;
     height: 1.5em;

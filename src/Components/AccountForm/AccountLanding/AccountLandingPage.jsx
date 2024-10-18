@@ -16,7 +16,7 @@ function AccountLandingPage() {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState();
   const [password, setPassword] = useState('');
-  const {setUser} = useContext(UserContext);
+  const {setUser, setUSerId} = useContext(UserContext);
   const [bgHandler, setBgHandler] = useState(false);
   
 
@@ -48,6 +48,7 @@ function AccountLandingPage() {
       try {
         const user = await axios.post("http://localhost:8000/api/profile/signIn", {email, password}, {withCredentials:true});
         console.log("User has successfully logged in ", user);
+        setUSerId(user.data.user._id);
         if(user.status === 201) {
           setOldAc(false);
           toast.success("Congratulations, Now You Have Logged In Successfully");
@@ -64,9 +65,11 @@ function AccountLandingPage() {
   const checkIsUserHaveToken = async ()=>{
     try {
        const user = await axios.post("http://localhost:8000/api/profile/userAuthentication", {}, {withCredentials:true});
+       console.log(user.status);
+       setUSerId(user.data.user._id);
        setUser(user.data.user);
+
        if(user.status === 201) {
-       
         navigator("/homePage");
        }
     } catch (error) {
