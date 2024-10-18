@@ -176,7 +176,7 @@ function Home() {
               setLoggedOutPopUpController(false);
             }}>Cancel</p>
           </div>
-      </div>``
+      </div>
       }
          <section className="sideNav">
           <div className='allFunc'>
